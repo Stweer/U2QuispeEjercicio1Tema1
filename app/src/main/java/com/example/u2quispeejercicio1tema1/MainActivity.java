@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
+
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private MiNuevoAdaptador adaptador;
@@ -26,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
     public Vector<String> valor;
     private String res;
     HttpURLConnection conexion;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adaptador.update(ListaClientes(conseguirstring()));
+    }
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
         adaptador = new MiNuevoAdaptador(this,
                 ListaClientes(conseguirstring()));
+
+
         recyclerView.setAdapter(adaptador);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -56,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return Clientes;
     }
+
+    // Metodo
+
     public String conseguirstring() {
         try {
             String miurl= this.getString(R.string.dominio)+this.getString(R.string.vercliente);
@@ -74,5 +93,21 @@ public class MainActivity extends AppCompatActivity {
             if (conexion!=null) conexion.disconnect();
         }
         return res;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_insertar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_insertar:
+                startActivity(new Intent(this, InsertarCliente.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

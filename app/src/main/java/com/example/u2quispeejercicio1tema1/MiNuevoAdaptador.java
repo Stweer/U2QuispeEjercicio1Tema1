@@ -43,4 +43,9 @@ public class MiNuevoAdaptador extends
             icon = (ImageView)itemView.findViewById(R.id.icono);
         }
     }
+    public void update(ArrayList<Cliente> datas){
+        lista.clear();
+        lista.addAll(datas);
+        notifyDataSetChanged();
+    }
 }
