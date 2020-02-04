@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">U2QuispeEjercicio1Tema1</string>
+    <string name="app_name">Unidad5Tema1</string>
+    <string name="dominio">https://lumpier-comment.000webhostapp.com/upt/</string>
+    <string name="login">/login.php?Usuario=</string>
+    <string name="insertarcliente">/insertarcliente.php?</string>
+    <string name="vercliente">/clientes.php</string>
 </resources>
