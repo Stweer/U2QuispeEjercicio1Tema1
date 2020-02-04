@@ -1,6 +1,7 @@
 package com.example.u2quispeejercicio1tema1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ public class MiNuevoAdaptador extends
         RecyclerView.Adapter<MiNuevoAdaptador.ViewHolder> {
     private LayoutInflater inflador;
     private ArrayList<Cliente> lista;
+    Context micontext;
+
     public MiNuevoAdaptador(Context context, ArrayList<Cliente> lista) {
         this.lista = lista;
         inflador = (LayoutInflater) context
@@ -26,7 +29,15 @@ public class MiNuevoAdaptador extends
         return new ViewHolder(v);
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int i) {
+    public void onBindViewHolder(final ViewHolder holder, int i) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(micontext, DetalleCliente.class);
+                intent.putExtra("nombre", holder.titulo.getText());
+                micontext.startActivity(intent);
+            }
+        });
         holder.titulo.setText(lista.get(i).getNombre()+" "+lista.get(i).getApellido());
     }
     @Override
