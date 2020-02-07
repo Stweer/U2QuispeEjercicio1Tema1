@@ -5,6 +5,9 @@
     <string name="insertarcliente">/insertarcliente.php?</string>
     <string name="vercliente">/clientes.php</string>
 
+    <string name="verdetallecliente">/verdetallecliente.php?Cod_Persona=</string>
+
+
     <string name="insertarclientepost">/insertarclientepost.php</string>
 
 </resources>

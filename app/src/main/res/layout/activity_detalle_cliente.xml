@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleCliente">
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:layout_margin="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:background="@mipmap/ic_launcher_round" />
+
+
+    <TextView
+        android:id="@+id/tv_codcliente"
+        android:layout_width="match_parent"
+        android:hint="Codigo :"
+        android:layout_marginTop="15dp"
+
+        android:layout_height="wrap_content">
+        <requestFocus/>
+    </TextView>
+    <TextView
+        android:id="@+id/txtnombre"
+        android:layout_width="match_parent"
+        android:hint="Nombre :"
+        android:layout_marginTop="15dp"
+
+        android:layout_height="wrap_content">
+        <requestFocus/>
+    </TextView>
+
+    <TextView
+        android:id="@+id/txtapellido"
+        android:layout_width="match_parent"
+        android:hint="Apellido :"
+        android:layout_marginTop="15dp"
+
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:id="@+id/sexo"
+        android:layout_width="wrap_content"
+        android:hint="Sexo :"
+        android:layout_marginTop="15dp"
+
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/txtdireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Direccion :"
+        android:layout_marginTop="15dp"
+
+        android:layout_below="@id/t_direccion"
+        android:inputType="textPostalAddress" />
+
+    <TextView
+        android:id="@+id/txttelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t_telefono"
+        android:hint="Telefono :"
+        android:layout_marginTop="15dp"
+        android:inputType="phone" />
+
+
+
+</LinearLayout>
