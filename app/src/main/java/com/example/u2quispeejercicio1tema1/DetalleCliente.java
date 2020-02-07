@@ -21,6 +21,7 @@ public class DetalleCliente extends AppCompatActivity {
     HttpURLConnection conexion;
     private String res;
     String codpersona;
+    String Masulino = "Masculino";
     TextView cod;
     private TextView apellido,sexo,nombre,telefono,direccion;
     private DetalleCliente detalle;
@@ -65,7 +66,14 @@ public class DetalleCliente extends AppCompatActivity {
                 apellido.setText(objeto.getString("Apellidos"));
                 telefono.setText(objeto.getString("celular"));
                 direccion.setText(objeto.getString("Domicilio"));
-                sexo.setText(objeto.getString("Sexo"));
+
+                if(objeto.getString("Sexo") == "0" ){
+//                    sexo.setText(objeto.getString(R.array.sexo(Masulino)));
+                    sexo.setText("Femenino");
+                }else {
+                    sexo.setText("Masculino");
+                }
+
             }
         } catch (JSONException e) {
             Log.i("MI error", e.toString());
