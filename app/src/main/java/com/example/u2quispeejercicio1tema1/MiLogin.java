@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -61,15 +62,45 @@ public class MiLogin  extends AppCompatActivity {
         }
     }
     public void onLogin(View view) {
-        int V = ValidaDatos(Login.getText().toString(), password.getText().toString());
-        if (V == 0) {
-            editor = prefs.edit();
-            editor.putBoolean("onlogin", true);
-            editor.apply();
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
-            finish();
-        } else
-            Toast.makeText(this, "Ingreso Fallido", Toast.LENGTH_SHORT).show();
+
+        Task1 task = new Task1();
+        task.execute();
+//
+//        int V = ValidaDatos(Login.getText().toString(), password.getText().toString());
+//        if (V == 0) {
+//            editor = prefs.edit();
+//            editor.putBoolean("onlogin", true);
+//            editor.apply();
+//            Intent i = new Intent(this, MainActivity.class);
+//            startActivity(i);
+//            finish();
+//        } else
+//            Toast.makeText(this, "Ingreso Fallido", Toast.LENGTH_SHORT).show();
     }
+
+    //Clase Asyntaask
+
+    public class Task1 extends AsyncTask<Void, Void, Integer> {
+        String usu = Login.getText().toString();
+        String pass = password.getText().toString();
+        int validar = 0;
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            validar = ValidaDatos(usu, pass);
+            return validar;
+        }
+
+        @Override protected void onPostExecute(Integer res) {
+            if (res == 0) {
+                //Para poder editar
+                editor = prefs.edit();
+                editor.putBoolean("onlogin", true);
+                editor.apply();
+                Intent i = new Intent( getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }
+    }
+
 }

@@ -67,11 +67,11 @@ public class DetalleCliente extends AppCompatActivity {
                 telefono.setText(objeto.getString("celular"));
                 direccion.setText(objeto.getString("Domicilio"));
 
-                if(objeto.getString("Sexo") == "0" ){
+                if(objeto.getString("Sexo") == "1"){
 //                    sexo.setText(objeto.getString(R.array.sexo(Masulino)));
-                    sexo.setText("Femenino");
-                }else {
                     sexo.setText("Masculino");
+                }else  {
+                    sexo.setText("Femenino");
                 }
 
             }
