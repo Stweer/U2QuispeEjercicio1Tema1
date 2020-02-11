@@ -1,4 +1,4 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.u2quispeejercicio1tema1.R;
 
 import org.json.JSONObject;
 

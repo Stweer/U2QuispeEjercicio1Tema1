@@ -1,4 +1,4 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.u2quispeejercicio1tema1.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adaptador.update(ListaClientes(conseguirstring()));
+        //adaptador.update(ListaClientes(conseguirstring()));
     }
 
 
@@ -51,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
         //adaptador = new MiNuevoAdaptador(this, misdatos);
 
 
-        adaptador = new MiNuevoAdaptador(this,
-                ListaClientes(conseguirstring()));
-
-
-        recyclerView.setAdapter(adaptador);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+//        adaptador = new MiNuevoAdaptador(this,
+//                ListaClientes(conseguirstring()));
+//
+//
+//        recyclerView.setAdapter(adaptador);
+//        layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
     }
     private ArrayList<Cliente> ListaClientes(String string) {
         ArrayList<Cliente> Clientes = new ArrayList<>();

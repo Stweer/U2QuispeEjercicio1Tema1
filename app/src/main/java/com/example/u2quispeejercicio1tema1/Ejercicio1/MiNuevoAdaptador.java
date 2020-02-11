@@ -1,4 +1,4 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,15 +10,18 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.u2quispeejercicio1tema1.Ejercicio1.Tarea2.ClienteR;
+import com.example.u2quispeejercicio1tema1.R;
+
 import java.util.ArrayList;
 
 public class MiNuevoAdaptador extends
         RecyclerView.Adapter<MiNuevoAdaptador.ViewHolder> {
     private LayoutInflater inflador;
-    private ArrayList<Cliente> lista;
+    private ArrayList<ClienteR> lista;
     Context micontext;
 
-    public MiNuevoAdaptador(Context context, ArrayList<Cliente> lista) {
+    public MiNuevoAdaptador(Context context, ArrayList<ClienteR> lista) {
         this.lista = lista;
         micontext=context;
         inflador = (LayoutInflater) context
@@ -61,7 +64,7 @@ public class MiNuevoAdaptador extends
         }
     }
 
-    public void update(ArrayList<Cliente> datas){
+    public void update(ArrayList<ClienteR> datas){
         lista.clear();
         lista.addAll(datas);
         notifyDataSetChanged();

@@ -1,12 +1,12 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.u2quispeejercicio1tema1.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

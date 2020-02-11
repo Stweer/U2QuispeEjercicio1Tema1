@@ -1,4 +1,4 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,8 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.u2quispeejercicio1tema1.R;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -63,7 +64,11 @@ public class MiLogin  extends AppCompatActivity {
     }
     public void onLogin(View view) {
 
+        //Creacion de Instancia
+
         Task1 task = new Task1();
+
+        // Ejecuta el proceso task // paralelamente
         task.execute();
 //
 //        int V = ValidaDatos(Login.getText().toString(), password.getText().toString());
@@ -84,15 +89,18 @@ public class MiLogin  extends AppCompatActivity {
         String usu = Login.getText().toString();
         String pass = password.getText().toString();
         int validar = 0;
+
+        // Metodo se ejcutara codigo mientras corra el proceso Task1
         @Override
         protected Integer doInBackground(Void... voids) {
+
+            //Codigo que se ejecuta atras cuando se ejecuta
             validar = ValidaDatos(usu, pass);
             return validar;
         }
 
         @Override protected void onPostExecute(Integer res) {
             if (res == 0) {
-                //Para poder editar
                 editor = prefs.edit();
                 editor.putBoolean("onlogin", true);
                 editor.apply();

@@ -1,4 +1,4 @@
-package com.example.u2quispeejercicio1tema1;
+package com.example.u2quispeejercicio1tema1.Ejercicio1;
 
 public class Cliente {
     private String codigo;

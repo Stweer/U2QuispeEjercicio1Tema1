@@ -5,7 +5,7 @@
     android:background="#ffecff14"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MiLogin">
+    tools:context=".Ejercicio1.MiLogin">
     <EditText
         android:id="@+id/edtUsuario"
         android:layout_width="220dp"

@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetalleCliente"></activity>
-        <activity android:name=".InsertarCliente" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".MiLogin">
+        <activity android:name=".Ejercicio1.DetalleCliente" />
+        <activity android:name=".Ejercicio1.InsertarCliente" />
+        <activity android:name=".Ejercicio1.MainActivity" />
+<!--        <activity android:name=".Ejercicio1.MiLogin">-->
+        <activity android:name=".Ejercicio1.Tarea2.ListarClienteR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
